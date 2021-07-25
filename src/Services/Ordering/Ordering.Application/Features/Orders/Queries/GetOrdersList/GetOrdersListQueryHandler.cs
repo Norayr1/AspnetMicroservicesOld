@@ -10,10 +10,10 @@ namespace Ordering.Application.Features.Orders.Queries.GetOrdersList
 {
     public class GetOrdersListQueryHandler : IRequestHandler<GetOrdersListQuery, List<OrdersVm>>
     {
-        private readonly IOrderRpository _orderRpository;
+        private readonly IOrderRepository _orderRpository;
         private readonly IMapper _mapper;
 
-        public GetOrdersListQueryHandler(IOrderRpository orderRpository, IMapper mapper)
+        public GetOrdersListQueryHandler(IOrderRepository orderRpository, IMapper mapper)
         {
             _orderRpository = orderRpository ?? throw new ArgumentNullException(nameof(orderRpository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

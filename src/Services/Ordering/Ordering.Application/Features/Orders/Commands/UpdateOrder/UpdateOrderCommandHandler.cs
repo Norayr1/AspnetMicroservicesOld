@@ -15,12 +15,11 @@ namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
 {
     public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand>
     {
-
-        private readonly IOrderRpository _orderRepository;
+        private readonly IOrderRepository _orderRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<UpdateOrderCommandHandler> _logger;
 
-        public UpdateOrderCommandHandler(IOrderRpository orderRepository, IMapper mapper, ILogger logger)
+        public UpdateOrderCommandHandler(IOrderRepository orderRepository, IMapper mapper, ILogger<UpdateOrderCommandHandler> logger)
         {
             _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

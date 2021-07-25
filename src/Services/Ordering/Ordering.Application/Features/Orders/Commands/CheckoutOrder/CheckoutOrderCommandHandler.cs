@@ -16,11 +16,11 @@ namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 {
     public class CheckoutOrderCommandHandler : IRequestHandler<CheckoutOrderCommand, int>
     {
-        private readonly IOrderRpository _orderRepository;
+        private readonly IOrderRepository _orderRepository;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
         private readonly ILogger<CheckoutOrderCommandHandler> _logger;
-        public CheckoutOrderCommandHandler(IOrderRpository orderRepository, IMapper mapper, IEmailService emailService, ILogger<CheckoutOrderCommandHandler> logger)
+        public CheckoutOrderCommandHandler(IOrderRepository orderRepository, IMapper mapper, IEmailService emailService, ILogger<CheckoutOrderCommandHandler> logger)
         {
             _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
